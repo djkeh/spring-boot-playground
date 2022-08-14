@@ -11,7 +11,10 @@ import javax.persistence.Id;
 @Entity
 @Data
 public class MyDomainDto {
-    private @Id @GeneratedValue(strategy = GenerationType.IDENTITY) Long id;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String name;
     private Integer age;
 
