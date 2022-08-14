@@ -1,17 +1,18 @@
 package com.example.springbootplayground.dto;
 
 import com.example.springbootplayground.domain.MyDomain;
+import lombok.Data;
 import lombok.Value;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Value(staticConstructor = "of")
+@Data(staticConstructor = "of")
 public class MyDomainDto {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) Long id;
-    String name;
-    Integer age;
+    private final @Id @GeneratedValue(strategy = GenerationType.IDENTITY) Long id;
+    private final String name;
+    private final Integer age;
 
     public static MyDomainDto from(MyDomain entity) {
         return new MyDomainDto(
